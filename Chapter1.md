@@ -1,1 +1,26 @@
-# Chapter 1
+# Chapter 1 - Category: The Essence of Composition
+
+1. Implement, as best as you can, the identity function in your favorite language (or the second favorite, if your favorite language
+happens to be Haskell).
+
+```csharp
+public static A identity<A>(A a) => a;
+```
+
+2. Implement the composition function in your favorite language. It
+takes two functions as arguments and returns a function that is
+their composition.
+
+```csharp
+public static Func<A, C> compose<A, B, C>(Func<A, B> f, Func<B, C> g) => a => g(f(a));
+```
+
+3. Write a program that tries to test that your composition function
+respects identity.
+
+4. Is the world-wide web a category in any sense? Are links morphisms?
+
+5. Is Facebook a category, with people as objects and friendships as
+morphisms?
+
+6. When is a directed graph a category?
