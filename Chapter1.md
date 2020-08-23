@@ -62,3 +62,14 @@ A --> C
 
 Each node would also need an edge that pointed back at itself.
 
+![Example Directed Graph](Chapter1.6.png)
+
+```mermaid
+graph LR;
+    A-->B;
+    A-->A;
+    B-->C;
+    B-->B;
+    A-->C;
+    C-->C;
+```
