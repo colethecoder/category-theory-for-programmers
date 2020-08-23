@@ -55,3 +55,20 @@ you implement them all?**
 **6. Draw a picture of a category whose only objects are the types
 Void, () (unit), and Bool; with arrows corresponding to all possible functions between these types. Label the arrows with the
 names of the functions.**
+
+```mermaid
+graph TD;
+    Bool([Bool])
+    Void([void])
+    Unit([unit])
+    Bool-->|id|Bool;
+    Bool-->|true|Bool;
+    Bool-->|false|Bool;
+    Bool-->|not|Bool;
+    Void-->|id|Void;
+    Void-->|absurd|Bool
+    Void-->|unit|Unit;
+    Unit-->|id|Unit;
+    Unit-->|true|Bool;
+    Unit-->|false|Bool;
+```
