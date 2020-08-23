@@ -33,22 +33,22 @@ Console.WriteLine(result);
 
 **4. Is the world-wide web a category in any sense? Are links morphisms?**
 
-    If it were a category with pages as objects and links as morphisms then:
+If it were a category with pages as objects and links as morphisms then:
 
-    - Each page would need to link to itself (identity)
-    - You would have to consider links as composable.
+- Each page would need to link to itself (identity)
+- You would have to consider links as composable.
 
-    So it's not really category.
+So it's not really category.
 
 **5. Is Facebook a category, with people as objects and friendships as
 morphisms?**
 
-    No because if:
+No because if:
 
-    `Person A is friends with Person B AND Person B is friends with Person C`
+`Person A is friends with Person B AND Person B is friends with Person C`
 
-    there is no guarantee that this can be composed to mean that Person A is friends with Person C.
-    Also identity would mean you are friends with yourself which is a bit strange.
+there is no guarantee that this can be composed to mean that Person A is friends with Person C.
+Also identity would mean you are friends with yourself which is a bit strange.
 
 **6. When is a directed graph a category?**
 
