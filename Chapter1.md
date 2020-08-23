@@ -52,4 +52,13 @@ Also identity would mean you are friends with yourself which is a bit strange.
 
 **6. When is a directed graph a category?**
 
+When there is an edge between each node and every subsequent one, so if
+
+A --> B --> C 
+
+then there would also need to be
+
+A --> C
+
+Each node would also need an edge that pointed back at itself.
 
