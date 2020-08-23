@@ -2,5 +2,5 @@
 
 Book link: https://github.com/hmemcpy/milewski-ctfp-pdf
 
-- [Chapter 1](Chapter1.md)
-- [Chapter 2](Chapter2.md)
+1. [Category: The Essence of Composition](Chapter1.md)
+2. [Types and Functions](Chapter2.md)
