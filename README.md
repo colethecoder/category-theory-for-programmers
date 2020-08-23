@@ -1,4 +1,4 @@
-# Category Theory for Programmers Exercises
+# Category Theory for Programmers Challenges
 
 Book link: https://github.com/hmemcpy/milewski-ctfp-pdf
 
