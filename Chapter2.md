@@ -11,6 +11,25 @@ takes a long time to evaluate. You’ll have to wait for the result
 the first time you call it, but on subsequent calls, with the same
 argument, you should get the result immediately.**
 
+```csharp
+public static Func<A,B> memoize<A, B>(Func<A, B> f)
+{
+    var remembered = new Dictionary<A, B>();
+
+    return x => {
+        if (remembered.TryGetValue(x, out var rememberedResult))
+        {
+            return rememberedResult;
+        }
+        else
+        {
+            var result = f(x);
+            remembered.Add(x, result);
+            return result;
+        }
+    };
+}
+```
 
 **2. Try to memoize a function from your standard library that you
 normally use to produce random numbers. Does it work?**
