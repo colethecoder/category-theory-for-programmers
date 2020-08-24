@@ -75,6 +75,8 @@ you implement them all?**
 Void, () (unit), and Bool; with arrows corresponding to all possible functions between these types. Label the arrows with the
 names of the functions.**
 
+![Example Bool, Void, Unit category](Chapter2.6.PNG "Example Bool, Void, Unit category")
+
 ```mermaid
 graph TD;
     Bool([Bool])
