@@ -62,14 +62,21 @@ A --> C
 
 Each node would also need an edge that pointed back at itself.
 
-![Example Directed Graph](Chapter1.6.PNG "Example Directed Graph")
-
-```mermaid
-graph LR;
-    A-->B;
-    A-->A;
-    B-->C;
-    B-->B;
-    A-->C;
-    C-->C;
-```
+![Alt text](https://g.gravizo.com/source/custom_mark1?https%3A%2F%2Fraw.githubusercontent.com%2Fcolethecoder%2Fcategory-theory-for-programmers%2Fmaster%2FChapter1.md)
+<details> 
+<summary></summary>
+custom_mark1
+  digraph d {
+    a -> a [label = " id "]
+    a -> b [label = " f "]
+    b -> b [label = " id "]
+    b -> c [label = " g "]
+    c -> c [label = " id "]
+    c -> d [label = " h "]
+    d -> d [label = " id "]
+    a -> c [label = " g.f "]
+    a -> d [label = " h.g.f "]
+    b -> d [label = " h.g "]
+}
+custom_mark1
+</details>
