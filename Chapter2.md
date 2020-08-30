@@ -79,22 +79,20 @@ names of the functions.**
 <details> 
 <summary></summary>
 custom_mark10
-   digraph d {
-    { Bool [height="1.3"] }
-
-    void -> void [label = "id", headport = n, tailport = n]
-    void -> unit [label = "  absurd  "]
-    void -> Bool [label = "  absurd  "]
-
-    unit -> unit [label = "  id  ", headport = s, tailport = s]
-    unit -> Bool [label = "  true  "]
-    unit -> Bool [label = "  false  "]
-
-    Bool -> unit [label = "unit"]
-    Bool -> Bool [label = "   id   "]
-    Bool -> Bool [label = "   always   "]
-    Bool -> Bool [label = "   never   "]
-    Bool -> Bool [label = "   not   "]
-   }
+  digraph G {
+    size ="4,4";
+    main [shape=box];
+    main -> parse [weight=8];
+    parse -> execute;
+    main -> init [style=dotted];
+    main -> cleanup;
+    execute -> { make_string; printf};
+    init -> make_string;
+    edge [color=red];
+    main -> printf [style=bold,label="100 times"];
+    make_string [label="make a string"];
+    node [shape=box,style=filled,color=".7 .3 1.0"];
+    execute -> compare;
+  }
 custom_mark10
 </details>
