@@ -75,10 +75,10 @@ you implement them all?**
 Void, () (unit), and Bool; with arrows corresponding to all possible functions between these types. Label the arrows with the
 names of the functions.**
 
-![Alt text](https://g.gravizo.com/source/custom_mark10?https%3A%2F%2Fraw.githubusercontent.com%2Fcolethecoder%2Fcategory-theory-for-programmers%2Fmaster%2FChapter2.md)
+![Alt text](https://g.gravizo.com/source/custom_mark1?https%3A%2F%2Fraw.githubusercontent.com%2Fcolethecoder%2Fcategory-theory-for-programmers%2Fmaster%2FChapter2.md)
 <details> 
 <summary></summary>
-custom_mark10
+custom_mark1
   digraph d {
     { Bool [height="1.3"] }
     void -> void [label = "id", headport = n, tailport = n];
@@ -93,5 +93,5 @@ custom_mark10
     Bool -> Bool [label = "   never   "];
     Bool -> Bool [label = "   not   "];
   }
-custom_mark10
+custom_mark1
 </details>
