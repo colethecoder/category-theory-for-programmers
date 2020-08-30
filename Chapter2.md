@@ -75,37 +75,15 @@ you implement them all?**
 Void, () (unit), and Bool; with arrows corresponding to all possible functions between these types. Label the arrows with the
 names of the functions.**
 
-![Example Bool, Void, Unit category](Chapter2.6.PNG "Example Bool, Void, Unit category")
-
-```mermaid
-graph TD;
-    Bool([Bool])
-    Void([void])
-    Unit([unit])
-    Bool-->|id|Bool;
-    Bool-->|true|Bool;
-    Bool-->|false|Bool;
-    Bool-->|not|Bool;
-    Void-->|id|Void;
-    Void-->|absurd|Bool
-    Void-->|unit|Unit;
-    Unit-->|id|Unit;
-    Unit-->|true|Bool;
-    Unit-->|false|Bool;
-```
-
-![Alt text](https://g.gravizo.com/source/custom_mark10?https%3A%2F%2Fraw.githubusercontent.com%2Fcolethecoder%2Fcategory-theory-for-programmers%2Fmaster%2FChapter2.md)
-<details> 
-<summary></summary>
-custom_mark10
+!["Alt text"](https://g.gravizo.com/svg?
   digraph G {
-    size ="4,4";
+    aize ="4,4";
     main [shape=box];
     main -> parse [weight=8];
     parse -> execute;
-    main -> init;
+    main -> init [style=dotted];
     main -> cleanup;
-    execute -> { make_string; printf};
+    execute -> { make_string; printf}
     init -> make_string;
     edge [color=red];
     main -> printf [style=bold,label="100 times"];
@@ -113,5 +91,4 @@ custom_mark10
     node [shape=box,style=filled,color=".7 .3 1.0"];
     execute -> compare;
   }
-custom_mark10
-</details>
+)
