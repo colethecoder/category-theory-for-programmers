@@ -112,7 +112,7 @@ return y;
 }
 ```
 
-Only (a) is pure. (b) and (c) contain IO and therefore the IO would only apply on the initial all not when memo-ed. (d) uses a static variable that will increment when used normally but not when memo-ed. 
+Only (a) is pure. (b) and (c) contain IO and therefore the IO would only apply on the initial call not when memo-ed. (d) uses a static variable that will increment when used normally but not when memo-ed. 
 
 **5. How many different functions are there from Bool to Bool? Can
 you implement them all?**
