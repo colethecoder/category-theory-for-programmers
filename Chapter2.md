@@ -34,12 +34,56 @@ public static Func<A,B> memoize<A, B>(Func<A, B> f)
 **2. Try to memoize a function from your standard library that you
 normally use to produce random numbers. Does it work?**
 
+I created a very basic Unit type so that the function can have an input:
+
+```csharp
+public struct Unit {
+    public static Unit unit => default;
+}
+```
+
+Then wrapped up System.Random
+
+```csharp
+public static int Random(Unit _) => new Random().Next();
+```
+
+Two calls without memoizing:
+
+```csharp
+Console.WriteLine(Random(Unit.unit)); // 293662137
+Console.WriteLine(Random(Unit.unit)); // 1621155432
+```
+
+Then memoized:
+
+```csharp
+var memRand = memoize<Unit, int>(Random);
+
+Console.WriteLine(memRand(Unit.unit)); // 540638266
+Console.WriteLine(memRand(Unit.unit)); // 540638266
+```
 
 **3. Most random number generators can be initialized with a seed.
 Implement a function that takes a seed, calls the random number
 generator with that seed, and returns the result. Memoize that
 function. Does it work?**
 
+```csharp
+public static int Random(int seed) => new Random(seed).Next();
+```
+
+```csharp
+Console.WriteLine(Random(123)); // 2114319875
+Console.WriteLine(Random(123)); // 2114319875
+Console.WriteLine(Random(456)); // 2044805024
+
+var memRand = memoize<int, int>(Random);
+
+Console.WriteLine(memRand(123)); // 2114319875
+Console.WriteLine(memRand(123)); // 2114319875
+Console.WriteLine(memRand(456)); // 2044805024
+```
 
 **4. Which of these C++ functions are pure? Try to memoize them
 and observe what happens when you call them multiple times:
@@ -68,8 +112,27 @@ return y;
 }
 ```
 
+Only (a) is pure. (b) and (c) contain IO and therefore the IO would only apply on the initial all not when memo-ed. (d) uses a static variable that will increment when used normally but not when memo-ed. 
+
 **5. How many different functions are there from Bool to Bool? Can
 you implement them all?**
+
+The cardinality of Bool (number of possible values) is 2. The cardinality of a function (number of possible pure functions) of the form `a -> b` is the cardinality of type `b` to the power of the cardinality of type `a` i.e.
+
+`b^a`
+
+`Bool -> Bool` therefore has the cardinality:
+
+`2^2`
+
+The 4 functions are:
+
+```csharp
+public static bool always(bool _) => true;
+public static bool never(bool _)  => false;
+public static bool not(bool x)    => !x;
+public static bool id(bool x)     => x;
+```
 
 **6. Draw a picture of a category whose only objects are the types
 Void, () (unit), and Bool; with arrows corresponding to all possible functions between these types. Label the arrows with the
